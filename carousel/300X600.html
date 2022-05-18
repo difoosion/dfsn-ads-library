@@ -1,0 +1,91 @@
+<head>
+    <meta charset="utf-8">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <script
+          type="module"
+          async
+          src="https://cdn.ampproject.org/bento.mjs"
+        ></script>
+        <script nomodule src="https://cdn.ampproject.org/bento.js"></script>
+        <link
+          rel="stylesheet"
+          type="text/css"
+          href="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.css"
+        />
+        <script
+          type="module"
+          async
+          src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.mjs"
+        ></script>
+        <script
+          nomodule
+          async
+          src="https://cdn.ampproject.org/v0/bento-base-carousel-1.0.js"
+        ></script>
+        <style>
+            body { margin: 0; width: 300px; font-family: 'Inter', sans-serif }
+            bento-base-carousel,
+            bento-base-carousel > a {
+                aspect-ratio: 300 / 600;
+                text-align: center;
+                text-decoration: none;
+                color: #000
+            }
+            .red {
+                background-color: #D9AFD9;
+                background-image: linear-gradient(0deg, #D9AFD9 0%, #97D9E1 100%);
+            }
+            .blue {
+                background-color: #74EBD5;
+                background-image: linear-gradient(90deg, #74EBD5 0%, #9FACE6 100%);
+            }
+            .green {
+                background-color: #FFDEE9;
+                background-image: linear-gradient(0deg, #FFDEE9 0%, #B5FFFC 100%);
+            }
+            .title {
+                font-weight: 700;
+                font-size: 21px;
+                line-height: 32px;
+                color: #000000
+            }
+            .description {
+                font-size: 14px;
+                line-height: 28px;
+                padding: 0 64px;
+            }
+        </style>
+    </head>
+    <body>
+    <bento-base-carousel id="my-carousel">
+          <a class="red" href="https://andro4all.com" target="_blank">
+            <img src="https://cdn.andro4all.com/andro4all/2022/03/Xiaomi-12.1648561356.0778.png?width=250">
+            <div class="title">
+                Xiaomi 12
+            </div>
+            <div class="description">
+                Con un peso de 180 g y una ancho de tan solo 69,9 mm, el Xiaomi 12 ha sido diseñado con tecnología avanzada para proporcionar un agarre suave, uniforme y ligero.
+            </div>
+          </a>
+          <a class="blue" href="https://andro4all.com" target="_blank">
+            <img src="https://cdn.andro4all.com/andro4all/2022/03/Xiaomi-12-Pro.png?width=250">
+            <div class="title">
+                Xiaomi 12 Pro
+            </div>
+            <div class="description">
+                Con un peso de 180 g y una ancho de tan solo 69,9 mm, el Xiaomi 12 ha sido diseñado con tecnología avanzada para proporcionar un agarre suave, uniforme y ligero.
+            </div>
+          </a>
+          <a class="green" href="https://andro4all.com" target="_blank">
+            <img src="https://cdn.andro4all.com/andro4all/2022/01/XIaomi-Band-6.png?width=250">
+            <div class="title">
+                Xiaomi Band 6
+            </div>
+            <div class="description">
+                Con un peso de 180 g y una ancho de tan solo 69,9 mm, el Xiaomi 12 ha sido diseñado con tecnología avanzada para proporcionar un agarre suave, uniforme y ligero.
+            </div>
+          </a>
+        </bento-base-carousel>
+    </body>
