@@ -29,52 +29,58 @@
         .logo { text-align: center; padding: 48px 0 }
         .logo img { max-width: 300px }
 
-        .movable { background-color: red; position: absolute; top: 25px; left: 25px; width: 300px; height: 250px }
+        .nav { background-color: lightcoral; position: absolute; top: 0; left: 0; bottom: 0; right: 0; transform: translateX(-100vw) }
+        .open { transform: translateX(0); transition: 0.3s ease-in-out }
+        .close { transition: 0.3s ease-in-out }
     </style>
 </head>
 <body>
-    <div class="container">
-        <h1>Ads Library</h1>
-        <h2>Native</h2>
-
-        <ul>
-            <li><a href="house/300X600.html">300x600</a></li>
-            <li><a href="house/300X250.html">300x250</a></li>
-            <li><a href="house/320X100.html">320x100</a></li>
-        </ul>
-
-        <h2>Carousel</h2>
-
-        <ul>
-            <li><a href="carousel/300X600.html">300x600</a></li>
-            <li><a href="carousel/300X250.html">300x250</a></li>
-        </ul>
-
-        <div class="logo">
-            <img src="https://cdn.andro4all.com/andro4all/logos/footer-logo.png">
-        </div>
-    </div>
     <script>
         var startX = null;
-        var startY = null;
+        var lastMoveX = null;
+
+        function openMenu() {
+            document.querySelector(".nav").classList.remove('close');
+            document.querySelector('.nav').classList.add('open');
+        }
+
+        function closeMenu() {
+            document.querySelector(".nav").classList.remove('open');
+        }
 
         function touchStart(event) {
             console.log("start", event);
+            event.target.style.transform = "translateX(0)"
+            event.target.classList.remove('open');
             startX = event.targetTouches[0].clientX;
-            startY = event.targetTouches[0].clientY;
+            lastMoveX = startX;
         }
 
         function touchMove(event) {
-            var translateX = event.targetTouches[0].clientX - startX;
-            event.target.style.transform = `translateX(${translateX}px)`;
+            lastMoveX = event.targetTouches[0].clientX;
+            var translateX = lastMoveX - startX;
+            if (translateX < 0) {
+                event.target.style.transform = `translateX(${translateX}px)`;
+            }
         }
 
         function touchEnd(event) {
-            console.log("end", event);
+            var translateX = lastMoveX - startX;
+            var navWidth = event.target.clientWidth;
+            event.target.style.transform = null;
+            if ((translateX * -1) > navWidth / 2) {
+                event.target.classList.add('close');
+            }
+            else {
+                event.target.classList.add('open');
+            }
         }
     </script>
-    <div class="movable" ontouchstart="touchStart(event)" ontouchmove="touchMove(event)" ontouchend="touchEnd(event)">
-
+    <button onclick="openMenu()">Open</button>
+    <div class="nav"
+            ontouchstart="touchStart(event)"
+            ontouchmove="touchMove(event)" ontouchend="touchEnd(event)">
+        <button onclick="closeMenu()">Close</button>
     </div>
 </body>
 </html>
