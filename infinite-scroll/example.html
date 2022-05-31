@@ -13,9 +13,9 @@
 </head>
 
 <body>
-    <div class="a item" data-hash="a" data-title="A"></div>
-    <div class="b item" data-hash="b" data-title="B"></div>
-    <div class="c item" data-hash="c" data-title="C"></div>
+    <div id="a" class="a item" data-hash="a" data-title="A"></div>
+    <div id="b" class="b item" data-hash="b" data-title="B"></div>
+    <div id="c" class="c item" data-hash="c" data-title="C"></div>
 
     <script>
         let currentItem = document.querySelector('.a');
@@ -35,12 +35,16 @@
                 history.pushState({
                     title: currentItem.dataset.title,
                     url: `/dfsn-ads-library/infinite-scroll/${currentItem.dataset.hash}`,
-                    hash: currentItem.dataset.hash
+                    hash: currentItem.dataset.hash,
+                    id: currentItem.id
                 }, currentItem.dataset.title, `/dfsn-ads-library/infinite-scroll/${currentItem.dataset.hash}`)
             }
         });
         document.querySelectorAll('.item').forEach(item => {
             observer.observe(item);
         })
+        window.onpopstate = function(event) {
+            document.getElementById(event.state.id).scrollIntoView();
+        };
     </script>
 </body>
