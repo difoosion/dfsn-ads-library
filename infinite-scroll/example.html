@@ -13,12 +13,11 @@
 </head>
 
 <body>
-    <div class="a item" data-hash="a"></div>
-    <div class="b item" data-hash="b"></div>
-    <div class="c item" data-hash="c"></div>
+    <div class="a item" data-hash="a" data-title="A"></div>
+    <div class="b item" data-hash="b" data-title="B"></div>
+    <div class="c item" data-hash="c" data-title="C"></div>
 
     <script>
-        location.hash = "a";
         let currentItem = document.querySelector('.a');
         let interseting = [];
         let observer = new IntersectionObserver(
@@ -33,7 +32,11 @@
             });
             if (interseting.length == 1 && interseting[0] != currentItem) {
                 currentItem = interseting[0];
-                location.hash = currentItem.dataset.hash;
+                history.pushState({
+                    title: currentItem.dataset.title,
+                    url: `/dfsn-ads-library/infinite-scroll/${currentItem.dataset.hash}`,
+                    hash: currentItem.dataset.hash
+                }, currentItem.dataset.title, `/dfsn-ads-library/infinite-scroll/${currentItem.dataset.hash}`)
             }
         });
         document.querySelectorAll('.item').forEach(item => {
