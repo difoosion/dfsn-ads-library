@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body { margin: 0 }
+        .a { height: 2000px; background-color: blanchedalmond; }
+        .b { height: 2000px; background-color: azure; }
+        .c { height: 2000px; background-color: deeppink; }
+    </style>
+</head>
+
+<body>
+    <div class="a item" data-hash="a"></div>
+    <div class="b item" data-hash="b"></div>
+    <div class="c item" data-hash="c"></div>
+
+    <script>
+        location.hash = "a";
+        let currentItem = document.querySelector('.a');
+        let interseting = [];
+        let observer = new IntersectionObserver(
+        (entries, observer) => { 
+            entries.forEach(entry => {
+                if (entry.isIntersecting && interseting.indexOf(entry.target) < 0) {
+                    interseting.push(entry.target);
+                }
+                else if (!entry.isIntersecting && interseting.indexOf(entry.target) >= 0) {
+                    interseting.splice(interseting.indexOf(entry.target), 1);
+                }
+            });
+            if (interseting.length == 1 && interseting[0] != currentItem) {
+                currentItem = interseting[0];
+                location.hash = currentItem.dataset.hash;
+            }
+        });
+        document.querySelectorAll('.item').forEach(item => {
+            observer.observe(item);
+        })
+    </script>
+</body>
