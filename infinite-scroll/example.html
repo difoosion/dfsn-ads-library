@@ -4,18 +4,38 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body { margin: 0 }
+        body { margin: 0; font-family: 'Inter', sans-serif }
         .a { height: 2000px; background-color: blanchedalmond; }
         .b { height: 2000px; background-color: azure; }
         .c { height: 2000px; background-color: deeppink; }
+
+        .ad-300x250 { width: 300px; height: 250px; font-weight: bold; vertical-align: middle; display: table-cell; text-align: center }
+        .red { background-color: red; color: #fff }
+        .blue { background-color: cornflowerblue; color:#fff }
+        .yellow { background-color: gold }
     </style>
 </head>
 
 <body>
-    <div id="a" class="a item" data-hash="a" data-title="A"></div>
-    <div id="b" class="b item" data-hash="b" data-title="B"></div>
-    <div id="c" class="c item" data-hash="c" data-title="C"></div>
+    <div id="a" class="a item" data-hash="a" data-title="A">
+        <div class="ad-300x250 red">
+            AD
+        </div>
+    </div>
+    <div id="b" class="b item" data-hash="b" data-title="B">
+        <div class="ad-300x250 blue">
+            AD
+        </div>
+    </div>
+    <div id="c" class="c item" data-hash="c" data-title="C">
+        <div class="ad-300x250 yellow">
+            AD
+        </div>
+    </div>
 
     <script>
         let currentItem = document.querySelector('.a');
