@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Difoosion Ads Library</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 19px; line-height: 32px; background-color: #fcfcfc; }
+        h1 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 21px;
+            line-height: 32px;
+            color: #666666;
+        }
+
+        a { color: #8949E9 }
+
+        .container { width: 992px; margin: 0 auto }
+
+        .logo { text-align: center; padding: 48px 0 }
+        .logo img { max-width: 300px }
+        dfsn-menu {
+            background-color: #fff;
+            width: 320px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 9999999;
+            transform: translateX(-360px);
+            padding: 20px;
+        }
+
+        dfsn-menu.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <dfsn-menu>
+
+    </dfsn-menu>
+
+    <button onclick="javascript:toggleMenu()">Open</button>
+
+    <script>
+        class DfsnMenu extends HTMLElement {
+            connectedCallback() {
+                var background = document.createElement("div");
+                background.classList.add("background");
+                this.appendChild(background);
+                var closeButton = document.createElement("button");
+                closeButton.innerHTML = "Close";
+                closeButton.addEventListener("click", function() {
+                    toggleMenu();
+                });
+                var nav = document.createElement("nav");
+                var list = document.createElement("ul");
+                nav.appendChild(list);
+                this.appendChild(nav);
+                this.appendChild(closeButton);
+                fetch("https://tools.difoosion.net/tools/GetDynamicContent?type=beta").then(response => response.json()).then(
+                    data => {
+                        data.menuItems.forEach(function(item) {
+                            var li = document.createElement("li");
+                            var a = document.createElement("a");
+                            a.href = item.link;
+                            a.innerHTML = item.name;
+                            li.appendChild(a);
+                            if (item.subItems != null) {
+                                var subList = document.createElement("ul");
+                                item.subItems.forEach(subItem => {
+                                    var subLi = document.createElement("li");
+                                    var subA = document.createElement("a");
+                                    subA.href = subItem.list;
+                                    subA.innerHTML = subItem.name;
+                                    subLi.appendChild(subA);
+                                    subList.appendChild(subLi);
+                                });
+                                li.appendChild(subList);
+                            }
+                            list.appendChild(li);
+                        });
+                    }
+                );
+            }
+        }
+        customElements.get('dfsn-menu') | customElements.define('dfsn-menu', DfsnMenu);
+        function toggleMenu() {
+            var menu = document.querySelector("dfsn-menu");
+            menu.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>
