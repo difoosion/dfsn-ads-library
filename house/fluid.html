@@ -31,7 +31,7 @@
             var domain = "alfabetajuega.com";
 
             var getById = (id) => document.getElementById(id);
-            var getInt = (urlParams, name) => parseInt(urlParams, name);
+            var getInt = (urlParams, name) => parseInt(urlParams.get(name));
 
             let urlSearchParams = new URLSearchParams(window.location.search);
             var height = getInt(urlSearchParams, 'height');
