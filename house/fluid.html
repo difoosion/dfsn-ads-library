@@ -139,7 +139,7 @@
             var title = getById('title');
             title.innerText = item.title;
             var link = getById('link');
-            link.href = item.link + '?utm_source=ssm&utm_medium=dfsn-recommender';
+            link.href = `%%CLICK_URL_UNESC%%${item.link}?utm_source=ssm&utm_medium=dfsn-recommender`;
         }
         
         load();
