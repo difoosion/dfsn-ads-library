@@ -8,13 +8,81 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
     <style>
         body { margin: 0; font-family: 'Inter', sans-serif }
-        #container { width: 300px; height: 600px; position: relative; }
+        #container { position: relative; background-color: #fff; }
 
-        .link_container img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
-        .link_container .title { font-style: normal; font-weight: 700; font-size: 19px; line-height: 24px; color: #000000; margin-top: 4px }
+        .andro4all a :hover { color: #367C5C }
+        .alfabetajuega a :hover { color: #8949E9 }
+        .urbantecno a :hover { color: #0072C3 }
+        .ipadizate a :hover { color: #0072C3 }
+
+        .link_container img { width: 100%; aspect-ratio: 19 / 10; object-fit: cover; border-radius: 6px }
+        .link_container .title { font-style: normal; font-weight: 700; font-size: 19px; line-height: 24px; color: #000; margin-top: 4px }
         #link { text-decoration: none }
         #link_2 { text-decoration: none }
-        #link_3 { text-decoration: none }        
+        #link_3 { text-decoration: none }
+        
+        @media only screen and (max-height: 100px) {
+            .link_container img { height: 100vh; width: 100vh; aspect-ratio: 1 / 1 }
+            .link_container .title {
+                position: absolute;
+                left: 100vh;
+                right: 0;
+                top: 0;
+                padding-left: 10px;
+                font-size: 16px;
+            }
+        }
+
+        @media only screen and (min-width: 375px) and (min-height: 250px) {
+            .link_container img { aspect-ratio: 18 / 7 }
+        }
+
+        @media only screen and (min-width: 375px) and (max-height: 100px) {
+            .link_container img { height: 100vh; width: 100vh; aspect-ratio: 1 / 1 }
+            .link_container .title {
+                font-size: 19px;
+            }
+        }
+
+        @media only screen and (min-width: 728px) and (max-height: 100px) {
+            .link_container img { height: 100vh; width: 100vh; aspect-ratio: 1 / 1 }
+            .link_container .title {
+                font-size: 21px;
+                line-height: 32px;
+            }
+        }
+
+        @media only screen and (min-height: 250px) {
+            .link_container .title {
+                font-style: normal;
+                font-weight: 700;
+                font-size: 19px;
+                line-height: 24px;
+                color: #000000;
+                margin-top: 4px;
+                max-height: 72px;
+                overflow: hidden;
+            }
+        }
+
+        @media only screen and (min-height: 600px) {
+            .link_container img { height: 100vw; width: 100vw; aspect-ratio: 1 / 1 }
+            .link_container .title {
+                font-size: 29px;
+                line-height: 36px;
+                font-weight: 600;
+                max-height: 50vh;
+            }
+        }
+
+        @media only screen and (min-height: 600px) and (max-width: 160px) {
+            .link_container img { height: 100vw; width: 100vw; aspect-ratio: 1 / 1 }
+            .link_container .title {
+                font-size: 21px;
+                line-height: 32px;
+            }
+        }
+
     </style>
 </head>
 <body>
@@ -28,7 +96,9 @@
     </div>
     <script>
         async function load() {
-            var domain = "alfabetajuega.com";
+            var domains = [ "andro4all.com", "alfabetajuega.com", "urbantecno.com", "ipadizate.com" ];
+
+            var domain = domains[Math.floor(Math.random() * 4)];
 
             var getById = (id) => document.getElementById(id);
             var getInt = (urlParams, name) => parseInt(urlParams.get(name));
@@ -36,8 +106,9 @@
             let urlSearchParams = new URLSearchParams(window.location.search);
             var height = getInt(urlSearchParams, 'height');
             var width = getInt(urlSearchParams, 'width');
-            
             var container = getById('container');
+            container.classList.add(domain.replace('.com', ''));
+            
             if (!isNaN(width)) {
                 container.style.maxWidth = `${width}px`;
             }

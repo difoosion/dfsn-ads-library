@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Difoosion Ads Library</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 19px; line-height: 32px }
+        h1 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 21px;
+            line-height: 32px;
+            color: #666666;
+        }
+
+        a { color: #8949E9 }
+
+        .container { width: 992px; margin: 0 auto }
+
+        .logo { text-align: center; padding: 48px 0 }
+        .logo img { max-width: 300px }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Ads Library</h1>
+        <h2>320x100</h2>
+
+        <iframe src="fluid.html" width="320" height="100" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>375x100</h2>
+
+        <iframe src="fluid.html" width="375" height="100" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>425x100</h2>
+
+        <iframe src="fluid.html" width="425" height="100" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>300x250</h2>
+
+        <iframe src="fluid.html" width="300" height="250" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>375x250</h2>
+
+        <iframe src="fluid.html" width="375" height="250" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>425x250</h2>
+
+        <iframe src="fluid.html" width="425" height="250" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>475x250</h2>
+
+        <iframe src="fluid.html" width="475" height="250" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>728x90</h2>
+
+        <iframe src="fluid.html" width="728" height="90" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>300x600</h2>
+
+        <iframe src="fluid.html" width="300" height="600" frameBorder="0" scrolling="no"></iframe>
+
+        <h2>160x600</h2>
+
+        <iframe src="fluid.html" width="160" height="600" frameBorder="0" scrolling="no"></iframe>
+
+        <div class="logo">
+            <img src="https://cdn.andro4all.com/andro4all/logos/footer-logo.png">
+        </div>
+    </div>
+    <script>
+        if ('serviceWorker' in navigator) {
+            // Register a service worker hosted at the root of the
+            // site using the default scope.
+            navigator.serviceWorker.register('/dfsn-ads-library/sw.js', { scope: '/dfsn-ads-library/' } ).then(function(registration) {
+                console.log('Service worker registration succeeded:', registration);
+            }).catch(function(error) {
+                console.log('Service worker registration failed:', error);
+        });
+        } else {
+            console.log('Service workers are not supported.');
+        }
+    </script>
+</body>
+</html>
