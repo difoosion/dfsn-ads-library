@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Difoosion Ads Library</title>
+    <style>
+        body { font-family: 'Inter', sans-serif; font-weight: 400; font-size: 19px; line-height: 32px; background-color: #fcfcfc; margin: 0; padding: 20px }
+        h1 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 21px;
+            line-height: 32px;
+            color: #666666;
+        }
+
+        a { color: #8949E9 }
+
+        .container { width: 992px; margin: 0 auto }
+
+        .logo { text-align: center; padding: 48px 0 }
+        .logo img { max-width: 300px }
+        dfsn-comments {
+            background-color: #fff;
+            width: 620px;
+            position: absolute;
+            top: 0;
+            right: 0;
+            left: 0;
+            bottom: 0;
+            z-index: 9999999;
+            transform: translateX(-660px);
+            padding: 20px;
+        }
+
+        dfsn-comments.open {
+            transform: translateX(0);
+        }
+    </style>
+</head>
+<body>
+    <dfsn-comments></dfsn-comments>
+
+    <button onclick="javascript:toggleMenu()">Open</button>
+
+    <script>
+        var disqus_config = function () {
+            this.page.url = "https://andro4all.com/android-11/instalar-android-11";
+        }
+        class DfsnComments extends HTMLElement {
+            connectedCallback() {
+                var background = document.createElement("div");
+                background.classList.add("background");
+                this.appendChild(background);
+                var closeButton = document.createElement("button");
+                closeButton.innerHTML = "Close";
+                closeButton.addEventListener("click", function() {
+                    toggleMenu();
+                });
+                this.appendChild(closeButton);
+                var disqusThread = document.createElement("div");
+                disqusThread.id = "disqus_thread";
+                this.appendChild(disqusThread);
+            }
+            load() {
+                console.log('load');
+                (function() { // DON'T EDIT BELOW THIS LINE
+                var d = document, s = d.createElement('script');
+                s.src = 'https://andro4all.disqus.com/embed.js';
+                s.setAttribute('data-timestamp', +new Date());
+                (d.head || d.body).appendChild(s);
+                })();
+            }
+        }
+        customElements.get('dfsn-comments') | customElements.define('dfsn-comments', DfsnComments);
+        function toggleMenu() {
+            var comments = document.querySelector("dfsn-comments");
+            comments.load();
+            comments.classList.toggle("open");
+        }
+    </script>
+</body>
+</html>

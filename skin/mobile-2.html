@@ -1,0 +1,393 @@
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&amp;display=swap" rel="stylesheet">
+    <title>Difoosion Ads Library</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 32px;
+            background-color: #fcfcfc;
+        }
+
+        h1 {
+            font-weight: 700;
+            font-size: 48px;
+            line-height: 56px;
+        }
+
+        h2 {
+            font-weight: 400;
+            font-size: 21px;
+            line-height: 32px;
+            color: #666666;
+        }
+
+        a {
+            color: #8949E9
+        }
+
+        .container {
+            width: 992px;
+            margin: 0 auto
+        }
+
+        .logo {
+            text-align: center;
+            padding: 48px 0
+        }
+
+        .logo img {
+            max-width: 300px
+        }
+
+        .trends {
+            width: 100%;
+            height: 40px;
+            background: #000000;
+            display: flex;
+            align-items: center;
+            overflow-x: auto;
+            color: #fff;
+            overflow-x: hidden;
+            white-space: nowrap;
+            font-size: 13px;
+            line-height: 24px;
+            position: sticky;
+            top: 0;
+            z-index: 2;
+        }
+
+        .fire {
+            margin-left: 10px;
+            margin-right: 10px;
+            font-size: 16px;
+            line-height: 24px
+        }
+
+        header {
+            position: absolute;
+            left: 0;
+            right: 0;
+            top: 40px;
+            height: 64px;
+            background-color: rgba(0, 0, 0, 0.5);
+            box-shadow: 0px 4px 8px rgb(0 0 0 / 4%), 0px 0px 2px rgb(0 0 0 / 6%), 0px 0px 1px rgb(0 0 0 / 4%);
+            display: flex;
+            align-items: center;
+            z-index: 1;
+        }
+
+        .menu {
+            display: block;
+            background-image: url(https://cdn.andro4all.com/andro4all/icons/nav-dark.svg);
+            background-position: 10px;
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+            background-repeat: no-repeat;
+            background-size: 987px 40px;
+            border-radius: 4px;
+            transition: ease-in-out .1s;
+            cursor: pointer;
+        }
+
+        .logo {
+            margin: 0 0 0 8px;
+            background-position: 10px;
+            background-image: url(https://cdn.andro4all.com/andro4all/icons/logo-dark.svg);
+            cursor: unset;
+            background-size: 161px 40px;
+            width: 161px;
+            height: 20px;
+            padding: 10px;
+            background-repeat: no-repeat;
+            border-radius: 4px;
+            transition: ease-in-out .1s;
+        }
+
+        .search {
+            display: block;
+            background-image: url(https://cdn.andro4all.com/andro4all/icons/nav-dark.svg);
+            width: 20px;
+            height: 20px;
+            padding: 10px;
+            background-repeat: no-repeat;
+            background-size: 987px 40px;
+            border-radius: 4px;
+            transition: ease-in-out .1s;
+            cursor: pointer;
+            background-position: -20px;
+            margin-left: auto;
+        }
+
+        .skin {
+            background-image: url(https://s1.richmediastudio.com/display/0AEImrOKKL.jpg);
+            background-repeat: no-repeat;
+            height: 250px;
+            background-position: center 0;
+            background-attachment: fixed;
+            overflow-x: hidden;
+            margin-top: 0;
+            position: sticky;
+            top: -110px;
+        }
+
+        .skin:after {
+            content: "";
+            background-color: white;
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            height: 20px;
+            border-radius: 16px 16px 0px 0px;
+        }
+
+        .main {
+            background: #FFFFFF;
+            padding: 20px;
+        }
+
+        .container {
+            top: 104px;
+            left: 0;
+            right: 0;
+            max-width: 100vw;
+        }
+
+        .main h1 {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 800;
+            font-size: 33px;
+            line-height: 40px;
+            color: #000000;
+            margin: 0
+        }
+
+        .main h2 {
+            font-family: 'Inter';
+            font-style: normal;
+            font-weight: 400;
+            font-size: 19px;
+            line-height: 28px;
+            color: #000000;
+        }
+
+        .main p {
+            font-size: 19px;
+            line-height: 32px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="trends">
+        <span class="fire">🔥</span> <span class="text">Xiaomi - Android 13 - Google Play - Samsung - iPhone</span>
+    </div>
+    <header>
+        <div class="menu"></div>
+        <div class="logo"></div>
+        <div class="search"></div>
+    </header>
+    <div class="skin" id="skin">
+    </div>
+    <div class="container">
+        <div class="main">
+            <h1>Cómo hacer que nuestra tecnología dure más</h1>
+            <h2>Lo cierto es que debemos cuidar más nuestra tecnología. Cambiar la batería, limpiar el producto o
+                restablecer el equipo a estado de fábrica es mucho más barato que adquirir un dispositivo nuevo.</h2>
+            <p>
+                Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Maecenas porttitor congue massa. Fusce
+                posuere,
+                magna sed pulvinar ultricies, purus lectus malesuada libero, sit amet commodo magna eros quis urna.
+            </p>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. In luctus tincidunt congue. Mauris bibendum
+                sollicitudin nisi, eu egestas risus tincidunt a. Duis pulvinar ligula mi, vitae bibendum eros feugiat
+                sed. Curabitur libero neque, mollis sed velit in, varius aliquet nisi. Ut sed enim lacinia, ultricies ex
+                eu, tincidunt est. Orci varius natoque penatibus et magnis dis parturient montes, nascetur ridiculus
+                mus. Fusce feugiat eleifend mauris vel suscipit. Ut id mi in massa malesuada vestibulum. Integer finibus
+                mauris eu neque placerat, at porttitor turpis fermentum. Aenean sed eros mauris. Suspendisse ut lobortis
+                turpis. Etiam eu quam orci.
+
+                Donec eu posuere orci. Mauris mauris lacus, volutpat sit amet hendrerit id, porttitor eu magna. Donec
+                efficitur fringilla magna, nec maximus ante laoreet at. Sed id est mi. Aenean non lacus pulvinar orci
+                porttitor blandit non eget erat. Vestibulum vitae dictum ex. Donec quis odio consectetur, sagittis urna
+                sit amet, semper enim. Mauris eget orci ut nibh iaculis ornare ut posuere magna. Aliquam tristique,
+                magna et porta commodo, lectus ligula varius sem, faucibus pharetra ipsum felis quis purus. Phasellus a
+                velit sagittis, iaculis arcu eu, tempor augue. Donec quis posuere urna, eget suscipit purus.
+
+                Suspendisse aliquam, enim at gravida rhoncus, magna enim sodales lectus, in convallis turpis augue sit
+                amet ligula. Nam sed erat sit amet nisl vehicula hendrerit. Maecenas nec metus velit. Integer eget enim
+                suscipit, dictum lorem vitae, accumsan libero. Integer convallis dolor eu euismod molestie. Nunc
+                interdum ornare tortor. Quisque consequat blandit turpis, ut gravida elit pulvinar ac. Praesent
+                scelerisque dui nibh, non volutpat ante semper non. Praesent felis erat, lobortis et velit a, blandit
+                faucibus purus. Morbi eu ligula dignissim, elementum turpis sed, congue dolor.
+
+                Phasellus commodo consequat nisi. Duis sollicitudin ex justo. Curabitur sollicitudin vestibulum sem.
+                Nulla dapibus sollicitudin vulputate. Mauris commodo, ex ac consectetur efficitur, sem sapien faucibus
+                felis, eget sollicitudin neque sem nec nulla. Quisque nec porta justo. In vitae arcu dui. Mauris et sem
+                lacus. Etiam eget nulla luctus, finibus sem ac, sollicitudin ligula. Donec venenatis nunc felis, et
+                ultrices nisl tincidunt non. Nulla quam justo, auctor sit amet rutrum nec, aliquet vitae metus.
+
+                Phasellus ac neque consectetur, lobortis ante vel, accumsan dui. Curabitur malesuada odio eget nulla
+                rhoncus, in ultrices est euismod. Curabitur sodales pellentesque leo, quis mollis ante sollicitudin ac.
+                Nulla facilisi. Pellentesque ac viverra nulla. Ut aliquam porttitor vulputate. Ut libero dolor,
+                tristique vel maximus ac, interdum a orci. Suspendisse magna eros, porttitor a nunc id, feugiat accumsan
+                nunc. Maecenas a orci in est scelerisque interdum eu bibendum est. Praesent ac viverra risus, non
+                bibendum sapien. Donec eu dui ut erat suscipit dignissim. Morbi eu congue quam. Cras id suscipit nisl,
+                sit amet fringilla risus. Proin nisi urna, rhoncus in elementum vel, fermentum sit amet dui.
+
+                Nunc iaculis tincidunt nunc sit amet ornare. Vestibulum sed erat a metus commodo placerat. Aenean
+                commodo consectetur nisi, quis molestie libero blandit ut. Nulla auctor, massa ac elementum fringilla,
+                lorem est semper est, et cursus neque lorem vitae felis. Duis quis sodales quam, vel euismod nisi.
+                Praesent sed vehicula augue, ut laoreet purus. Morbi a tortor quis nisl vehicula luctus at et mi.
+
+                Pellentesque tincidunt at ex et lacinia. Quisque eleifend et orci vel aliquam. Quisque dictum eros eu
+                nisl dignissim, sed porttitor metus fringilla. Suspendisse convallis sodales tincidunt. Maecenas
+                gravida, quam vitae sollicitudin semper, nisl mauris elementum justo, sed tristique ante ligula id orci.
+                Quisque ac vestibulum diam, porttitor porta tellus. Suspendisse vestibulum rutrum leo, ac accumsan nunc
+                vestibulum id.
+
+                Mauris magna ex, eleifend vel maximus sit amet, vehicula at sapien. Aliquam ante lectus, porta ac ex a,
+                elementum volutpat sem. Aliquam ut urna quis ex venenatis pulvinar sed imperdiet urna. Mauris rutrum
+                dignissim dolor, nec malesuada est accumsan ac. Vestibulum elementum dapibus tellus. Sed iaculis a orci
+                pulvinar accumsan. Suspendisse fringilla mi nec nisi malesuada, sit amet porta ligula feugiat. Nullam id
+                vestibulum mi, ut euismod ex. Phasellus iaculis et risus nec placerat. Vivamus sodales lectus sit amet
+                felis faucibus porta.
+
+                Pellentesque id felis non ex sollicitudin convallis. Praesent imperdiet, lacus a lacinia feugiat, ex
+                augue lobortis turpis, at mattis libero urna a ipsum. Quisque a dapibus mauris. Quisque lectus dolor,
+                consectetur sed finibus non, fringilla ac dolor. Class aptent taciti sociosqu ad litora torquent per
+                conubia nostra, per inceptos himenaeos. Praesent nec risus imperdiet, iaculis ipsum in, aliquam purus.
+                In hac habitasse platea dictumst.
+
+                Vestibulum iaculis elit tortor, vitae gravida orci imperdiet nec. Sed dapibus mauris ante, eget varius
+                erat eleifend non. Nullam dignissim semper convallis. Cras faucibus accumsan vehicula. In ultrices est
+                ac bibendum bibendum. Nullam condimentum placerat mauris, tristique maximus neque accumsan vel. Nam
+                laoreet risus metus, nec maximus eros pulvinar dapibus. Quisque malesuada dignissim magna et tempus.
+                Donec nisl est, bibendum non congue non, tempus sed orci. Vestibulum iaculis pretium elit vel dictum. Ut
+                vel arcu vehicula, facilisis nisi condimentum, maximus magna. Maecenas diam metus, molestie vitae nisi
+                sodales, facilisis tristique ligula. Pellentesque fermentum vulputate est et pulvinar.
+
+                Praesent consequat, justo sit amet dignissim vehicula, enim est consequat turpis, vitae lacinia leo eros
+                quis libero. Nam dictum sapien at est vestibulum venenatis. Nunc tortor elit, auctor id orci non,
+                gravida tincidunt arcu. Nam sodales ultricies nunc, eu pharetra arcu viverra at. Etiam in facilisis
+                neque, et varius est. Aenean tempor, dui et pretium fringilla, sapien eros pellentesque purus, sit amet
+                pharetra dui metus finibus sapien. Fusce a semper felis, in pulvinar lectus. Sed volutpat odio neque, a
+                accumsan nisi aliquet eget. Nullam quis nunc eleifend, ultricies nunc vel, cursus dui. Vivamus eget
+                scelerisque magna, varius auctor augue.
+
+                Fusce turpis dui, vehicula eget laoreet a, feugiat luctus lectus. Fusce vulputate orci et odio rhoncus
+                congue. Praesent pharetra blandit dui id imperdiet. Aliquam erat volutpat. Suspendisse finibus sit amet
+                urna iaculis maximus. Integer vestibulum scelerisque eros, id condimentum nisl. Vestibulum ac elit at
+                justo pretium tempor eget eu massa. Aliquam convallis lorem sit amet ipsum semper porta. Ut eget lacus
+                aliquam, faucibus est ut, finibus eros.
+
+                Morbi tempus consequat ante nec accumsan. Aliquam euismod lobortis ipsum, in blandit arcu pharetra a.
+                Fusce ac arcu non ipsum molestie mollis. Curabitur facilisis et libero sit amet semper. Curabitur
+                sollicitudin fringilla molestie. Pellentesque et diam nisl. Praesent pharetra ornare egestas. Praesent
+                metus odio, fringilla dapibus libero in, egestas sodales purus. Duis elementum sapien sed nisl dignissim
+                laoreet. Proin quis risus neque. Fusce vehicula leo eros, a finibus magna pulvinar ut. In hac habitasse
+                platea dictumst.
+
+                Mauris et lacus a diam accumsan ullamcorper sed vitae nibh. Aenean ligula justo, posuere volutpat
+                egestas at, bibendum ut lacus. Vivamus efficitur felis blandit auctor facilisis. Cras sed aliquet ipsum,
+                sed volutpat nulla. Proin semper nibh congue luctus vestibulum. Fusce fringilla accumsan libero, eu
+                ullamcorper dui. Proin vitae nisi nec eros hendrerit consequat sodales quis mi. Phasellus laoreet felis
+                ut justo commodo, eu efficitur lectus porta. Fusce id magna non lectus pulvinar molestie. Suspendisse
+                feugiat justo vel purus varius tincidunt. Nullam ut fringilla justo, blandit imperdiet urna. Duis
+                convallis sapien a orci feugiat interdum. Aenean aliquet pretium mollis. Curabitur a auctor enim.
+
+                Cras molestie elementum venenatis. Duis eget ipsum ligula. Suspendisse accumsan leo urna, non sagittis
+                leo condimentum sed. Integer neque dolor, varius lobortis laoreet sed, rhoncus vel lectus. Class aptent
+                taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Donec fringilla quam et
+                lorem tincidunt auctor. Integer fringilla tincidunt placerat. Integer pellentesque pulvinar elit in
+                dignissim. Etiam vel feugiat nisl, sed porttitor turpis. Nullam interdum tortor in lacinia aliquam. In
+                sit amet fermentum nulla, sit amet egestas augue. Cras eros odio, sagittis quis dignissim id, accumsan
+                ac nibh. Nam ut lacus ut dui luctus tempor a sed massa. Aliquam erat volutpat.
+
+                Integer eleifend non arcu rhoncus mattis. Class aptent taciti sociosqu ad litora torquent per conubia
+                nostra, per inceptos himenaeos. Ut malesuada hendrerit lorem in ullamcorper. Duis vitae nisl sed ipsum
+                rhoncus tempor. Maecenas facilisis, enim et gravida tincidunt, ligula neque efficitur urna, vitae congue
+                lacus nunc in ligula. Pellentesque eget placerat turpis. Morbi pulvinar nisi eget felis varius auctor.
+                Nulla molestie sodales sapien eu egestas. Cras semper rhoncus est ut aliquam. Donec eu malesuada erat.
+                Nam nec hendrerit lorem. Aliquam porta dui molestie, tincidunt sapien in, blandit risus. Vivamus quis
+                odio luctus, tincidunt libero scelerisque, sagittis mi. Aliquam ornare quam sed justo posuere efficitur.
+                Quisque ultricies, odio a euismod blandit, sapien dui pellentesque nisl, at auctor neque lectus accumsan
+                lorem.
+
+                Nulla feugiat tincidunt convallis. Integer tincidunt accumsan orci, vel varius enim accumsan et. Proin
+                iaculis arcu in lectus vehicula, molestie tincidunt diam sodales. Ut mauris arcu, mollis ut odio et,
+                blandit lobortis quam. Etiam convallis sed nibh eget egestas. Nullam vel orci id quam sagittis molestie
+                a sed turpis. Aliquam est massa, luctus quis erat in, ultrices tempus mi. Sed fermentum augue
+                pellentesque, fermentum enim eget, tincidunt ex. Vivamus consectetur enim et ultrices aliquam. Sed ut
+                velit semper, aliquet ex id, tempor tortor. Maecenas lectus lectus, placerat vel sollicitudin eu,
+                viverra ultricies odio. Sed ac pharetra velit. Vivamus velit est, suscipit vitae enim at, dapibus mollis
+                massa. Aliquam dictum malesuada nisi, ac volutpat sapien fringilla at. Nam eu risus augue. Suspendisse a
+                nulla euismod, ultricies sem sed, rhoncus leo.
+
+                Suspendisse fringilla, velit sed iaculis auctor, nulla leo feugiat felis, in dignissim massa nisi at
+                metus. Quisque sit amet ipsum purus. Ut eu ultrices eros. Fusce pulvinar malesuada nisl, et luctus sem
+                viverra sed. Vivamus eu facilisis sem. Phasellus lectus risus, sodales vitae blandit quis, cursus vitae
+                metus. Nulla velit risus, finibus in sagittis sodales, tincidunt interdum arcu. Quisque eget ante eget
+                diam lacinia luctus. Phasellus at dolor quis tortor hendrerit hendrerit eget a libero. Duis mauris mi,
+                tincidunt quis felis quis, maximus auctor ligula. Praesent nec pharetra dui. Curabitur euismod a dolor
+                id condimentum. Mauris mattis blandit convallis. Suspendisse ultrices lacinia magna nec maximus. Integer
+                hendrerit at mi eget sagittis.
+
+                Nunc eget mollis sapien. Pellentesque efficitur laoreet odio, eu porta arcu porttitor nec. Nulla
+                facilisi. Sed malesuada malesuada magna, ut posuere risus faucibus sed. Nulla vestibulum purus nulla,
+                sed vehicula lorem mollis a. Pellentesque quis erat consectetur, finibus augue eu, egestas massa. In
+                venenatis lacus et lectus efficitur eleifend. In hac habitasse platea dictumst. Morbi a consequat odio.
+                Etiam cursus porttitor lectus in suscipit. Nunc dictum quis dolor sed efficitur. Maecenas egestas eget
+                enim eget malesuada.
+
+                Aliquam vitae bibendum mauris, vitae ornare lacus. Duis tempor commodo felis, et tempor lacus. Cras
+                cursus sodales dolor ut aliquam. Proin venenatis dui sit amet sodales sagittis. Vestibulum ullamcorper,
+                mauris a eleifend sagittis, nisi turpis consectetur risus, a vestibulum neque metus sit amet nisi. Sed
+                id aliquam velit. Duis vehicula dictum posuere. Mauris rutrum nisl et felis ornare, nec euismod mauris
+                dignissim. Ut eget ipsum turpis. Cras eu tempor metus. Interdum et malesuada fames ac ante ipsum primis
+                in faucibus. In quis ultrices nibh, at iaculis erat. Mauris et auctor lorem. Nulla non convallis eros,
+                et tempor purus. Proin ut magna mauris.
+
+            </p>
+            <p>Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin
+                pharetra
+                nonummy pede. Mauris et orci.</p>
+            <p>Aenean nec lorem. In porttitor. Donec laoreet nonummy augue.</p>
+            <p>Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem
+                venenatis eleifend. Ut nonummy.</p>
+
+            <p></p>
+        </div>
+    </div>
+    <script>
+
+    /*let options = {
+        rootMargin: '-150px',
+    }
+    var skin = document.getElementById("skin");
+    //observe intersection skin
+    var observer = new IntersectionObserver(function(entries) {
+        entries.forEach(function(entry) {
+            if(entry.intersectionRatio == 0) {
+                skin.style.backgroundPosition = "center -80px"
+            } else {
+                skin.style.transform = "center 0";
+            }
+        });
+    },options);
+    //observer.observe(skin);*/
+    </script>
+</body>
+
+</html>
