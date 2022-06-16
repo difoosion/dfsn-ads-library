@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <style>
+        body { margin: 0; font-family: 'Inter', sans-serif }
+        #container { width: 300px; height: 600px; position: relative; }
+
+        .link_container img { width: 100%; aspect-ratio: 3 / 2; object-fit: cover; }
+        .link_container .title { font-style: normal; font-weight: 700; font-size: 19px; line-height: 24px; color: #000000; margin-top: 4px }
+        #link { text-decoration: none }
+        #link_2 { text-decoration: none }
+        #link_3 { text-decoration: none }        
+    </style>
+</head>
+<body>
+    <div id="container">
+        <a id="link" target="_blank">
+            <div class="link_container">
+                <img id="image" />
+                <div id="title" class="title"></div>
+            </div>
+        </a>
+    </div>
+    <script>
+        async function load() {
+            var domain = "alfabetajuega.com";
+
+            var getById = (id) => document.getElementById(id);
+            var getInt = (urlParams, name) => parseInt(urlParams, name);
+
+            let urlSearchParams = new URLSearchParams(window.location.search);
+            var height = getInt(urlSearchParams, 'height');
+            var width = getInt(urlSearchParams, 'width');
+            
+            var container = getById('container');
+            if (!isNaN(width)) {
+                container.style.maxWidth = `${width}px`;
+            }
+            if (!isNaN(height)) {
+                container.style.maxHeight = `${height}px`;
+            }
+
+            var item = {
+                "link": "https://andro4all.com/2021/10/android-12-analisis-novedades-cambios-mejoras-opinion",
+                "title": "Android 12, análisis con todos los cambios y las novedades de la mayor actualización del sistema en años",
+                "image": "https://cdn.andro4all.com/files/2021/09/Android-12-diseo.jpg",
+                "post_date": "4/10/2021"
+            }
+
+            try {
+                const cachebuster = new Date();
+                const endpoint = `https://tools.difoosion.net/tools/GetFullFlowcard?link=https://${domain}/&domain=${domain}&origin=${window.location.origin}&cachebuster=${cachebuster.getTime()}`;
+                const response = await fetch(endpoint);
+                const data = await response.json();
+                if (typeof data.link !== 'undefined' && typeof data.title !== 'undefined' && typeof data.imageUrl !== 'undefined') {
+                    item = data;
+                }
+            }
+            catch {
+            }
+            var image = getById('image');
+            image.src = item.imageUrl + '?width=600&height=400&aspect_ratio=300:200';
+            var title = getById('title');
+            title.innerText = item.title;
+            var link = getById('link');
+            link.href = item.link + '?utm_source=ssm&utm_medium=dfsn-recommender';
+        }
+        
+        load();
+    </script>
+</body>
+</html>
