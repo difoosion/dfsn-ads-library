@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang='es'>
+ <head>
+  <title>Difoosion Wrapped 2022 - {{ Author Name }}</title>
+  <meta charset='utf-8'>
+  <meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+    body { margin: 0; background: #000; font-family: 'Inter', sans-serif; overflow-y: hidden }
+    h1 { font-weight: 900; margin: 0; padding: 0; font-size: 48px; line-height: 64px; }
+    .c1 { color: #0DE0FC }
+    .c2 { color: #38FC48 }
+    .c3 { color: #F938FC }
+    .c4 { color: #FA00AB }
+    .c5 { color: #DFFC00 }
+    .b1 { background-color: #0DE0FC }
+    .b2 { background-color: #38FC48 }
+    .b3 { background-color: #F938FC }
+    .b4 { background-color: #FA00AB }
+    .b5 { background-color: #DFFC00 }
+    .message {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        max-width: 550px;
+        margin: 0 auto;
+        height: 100vh; 
+        text-align: center;
+    }
+    @media (max-width: 475px) {
+        h1 {
+            font-size: 36px;
+            line-height: 52px;
+        }
+        .message {
+            max-width: 90vw;
+        }
+    }
+
+    .slides-2 {
+        transform: translateY(-100vh);
+    }
+    .slides-3 {
+        transform: translateY(-200vh);
+    }
+    .slides-4 {
+        transform: translateY(-300vh);
+    }
+    .slides-5 {
+        transform: translateY(-400vh);
+    }
+    .slides-6 {
+        transform: translateY(-500vh);
+    }
+    .slides-7 {
+        transform: translateY(-600vh);
+    }
+    .slides-8 {
+        transform: translateY(-700vh);
+    }
+    .slides-9 {
+        transform: translateY(-800vh);
+    }
+    .slides-10 {
+        transform: translateY(-900vh);
+    }
+
+
+    #slides {
+        transition: transform .4s ease-out;
+        position: fixed;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .slide {
+        position: relative 
+    }
+
+    .progress {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        height: 10px;
+        width: 0%;
+        transition: width 3s ease-in-out;
+    }
+
+    .underline { text-decoration: underline }
+
+    .active .progress {
+        width: 100%;
+    }
+    .left {
+        position: fixed;
+        cursor: pointer;
+        width: 20vw;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        z-index: 99999;
+    }
+    .right {
+        position: fixed;
+        cursor: pointer;
+        width: 20vw;
+        top: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 99999;
+    }
+  </style>
+  <script>
+    var position = 1;
+    var maxSlides = 5;
+    function movePrevious() {
+        if (position > 0) {
+            var slides = document.getElementById("slides");
+            slides.classList.toggle(`slides-${position}`);
+            document.getElementById(`slide${position}`).classList.toggle('active');
+            position--;
+            slides.classList.toggle(`slides-${position}`);
+            document.getElementById(`slide${position}`).classList.toggle('active');
+        }
+    }
+    function moveNext() {
+        if (position == maxSlides) {
+            clearInterval(animation);
+        }
+        else {
+            var slides = document.getElementById("slides");
+            slides.classList.toggle(`slides-${position}`);
+            document.getElementById(`slide${position}`).classList.toggle('active');
+            position++;
+            slides.classList.toggle(`slides-${position}`);
+            document.getElementById(`slide${position}`).classList.toggle('active');
+        }
+    }
+    var animation = setInterval(function() {
+        moveNext();
+    }, 4000);
+  </script>
+ </head>
+ <body>
+    <!--<div class="left" onclick="javascript:movePrevious()">
+    </div>
+    <div class="right" onclick="javascript:moveNext()">
+    </div>-->
+    <div id="slides" class="slides-1">
+        <div id="slide1" class="slide">
+            <div class="message">
+                <h1 class="c1">¡Hola <span class="underline">Christian Collado</span>!</h1>
+            </div>
+            <div class="progress b1"></div>
+        </div>
+        <div id="slide2" class="slide">
+            <div class="message">
+                <h1 class="c2">Este es tu resumen de 2022 en Difoosion</h1>
+            </div>
+            <div class="progress b2"></div>
+        </div>
+        <div id="slide3" class="slide">
+            <div class="message">
+                <h1 class="c3">Has escrito 2.396 artículos este año que han obtenido 24,5M de visitas</h1>
+            </div>
+            <div class="progress b3"></div>
+        </div>
+        <div id="slide4" class="slide">
+            <div class="message">
+                <h1 class="c4">Esto es una media de <span class="underline">10.231</span> visitas por artículo</h1>
+            </div>
+            <div class="progress b4"></div>
+        </div>
+        <div id="slide5" class="slide">
+            <div class="message">
+                <h1 class="c5">Si hubieras trabajado todos los días del año, habrías escrito 6,56 artículos al día</h1>
+            </div>
+            <div class="progress b5"></div>
+        </div>
+    </div>
+    <script>
+        var slides = document.getElementById("slides");
+        slides.scrollIntoView();
+        document.getElementById(`slide${position}`).classList.toggle('active');
+    </script>
+ </body>
+</html>
