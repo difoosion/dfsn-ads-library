@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+    <title>Difoosion Ads Library</title>
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            margin: 0;
+            background-color: lightgrey;
+        }
+        
+        .container {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            width: 960px;
+            margin: 0 auto;
+        }
+
+        .menu {
+            width: 300px;
+            height: 1000px;
+            background-color: white;
+            color: black;
+        }
+
+        .menu .title {
+            text-align: center;
+            font-size: 21px;
+            line-height: 32px;
+            font-weight: 700;
+            text-decoration: underline;
+            padding: 4px 0;
+        }
+
+        .menu a {
+            color: #8949E9;
+            display: inline-block;
+        }
+
+        .menu a:hover {
+            background-color: #F2F2F2 !important;
+            color: #000
+        }
+
+        .menu .section {
+            font-weight: 700;
+            text-align: center;
+        }
+
+        .menu .section a {
+            padding: 8px;
+            font-size: 21px;
+            line-height: 32px;
+            background-color: #F9F5FF;
+            border-radius: 4px;
+            margin: 4px;
+            display: block;
+            text-decoration: none;
+        }
+
+        .menu .items {
+            display: flex;
+            flex-flow: column;
+            flex-wrap: wrap;
+            flex-direction: row;
+            padding: 4px;
+        }
+
+        .menu .item {
+            width: 50%;
+            font-size: 13px;
+            line-height: 16px;
+            font-weight: 700;
+        }
+
+        .menu .double {
+            grid-column: 1 / 2;
+        }
+
+        .menu .item a {
+            padding: 6px 10px;
+            text-decoration: none;
+        }
+
+        .menu.dark {
+            background-color: black;
+            color: #fff;
+        }
+
+        .menu.dark a {
+            color: #955CEB
+        }
+
+        .menu.dark .section a {
+            background-color: #100029;
+        }
+
+        .menu.dark a:hover {
+            background-color: #191919 !important;
+            color: #fff;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <div class="menu">
+            <div class="title"><a href="#">Hogwarts Legacy</a></div>
+            <div class="section"><a href="#">Conceptos básicos</a></div>
+            <div class="items">
+                <div class="item"><a href="#">Elegir casa</a></div>
+                <div class="item"><a href="#">Elegir varita</a></div>
+            </div>
+            <div class="section"><a href="#">Editor de personajes</a></div>
+            <div class="items">
+                <div class="item double"><a href="#">Todas las guías</a></div>
+                <div class="item"><a href="#">Harry Potter</a></div>
+                <div class="item"><a href="#">Hermione Granger</a></div>
+                <div class="item"><a href="#">Ron Weasley</a></div>
+                <div class="item"><a href="#">Draco Malfoy</a></div>
+                <div class="item"><a href="#">Draco Malfoy Muy largo es este texto</a></div>
+            </div>
+            <div class="section"><a href="#">Hogwarts</a></div>
+            <div class="section"><a href="#">Misiones secundarias</a></div>
+            <div class="section"><a href="#">Ciudades y aldeas</a></div>
+            <div class="section"><a href="#">Coleccionables</a></div>
+            <div class="section"><a href="#">Equipamiento</a></div>
+            <div class="section"><a href="#">Puzzles</a></div>
+            <div class="section"><a href="#">Minijuegos</a></div>
+        </div>
+        <div class="menu dark">
+            <div class="title"><a href="#">Hogwarts Legacy</a></div>
+            <div class="section"><a href="#">Conceptos básicos</a></div>
+            <div class="items">
+                <div class="item"><a href="#">Elegir casa</a></div>
+                <div class="item"><a href="#">Elegir varita</a></div>
+            </div>
+            <div class="section"><a href="#">Editor de personajes</a></div>
+            <div class="items">
+                <div class="item"><a href="#">Harry Potter</a></div>
+                <div class="item"><a href="#">Hermione Granger</a></div>
+                <div class="item"><a href="#">Ron Weasley</a></div>
+                <div class="item"><a href="#">Draco Malfoy</a></div>
+                <div class="item"><a href="#">Draco Malfoy Muy largo es este texto</a></div>
+            </div>
+            <div class="section"><a href="#">Hogwarts</a></div>
+            <div class="section"><a href="#">Misiones secundarias</a></div>
+            <div class="section"><a href="#">Ciudades y aldeas</a></div>
+            <div class="section"><a href="#">Coleccionables</a></div>
+            <div class="section"><a href="#">Equipamiento</a></div>
+            <div class="section"><a href="#">Puzzles</a></div>
+            <div class="section"><a href="#">Minijuegos</a></div>
+        </div>
+    </div>
+</body>
+
+</html>
