@@ -1,35 +1,146 @@
 <!DOCTYPE html>
 <html>
+
 <head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet">
     <style>
-        html, body { margin: 0; height: 100% }
-        .container { width: 720px; aspect-ratio: 4 / 3 }
-        img { display: block; margin: 0; padding: 0; border-radius: 4px }
-        .main  { padding: 8px }
-        .main img { width: 100%; aspect-ratio: 16 / 9 }
+        html,
+        body {
+            margin: 0;
+            height: 100%;
+            font-family: "Inter", sans-serif;
+            font-optical-sizing: auto;
+            font-style: normal;
+            font-variation-settings: "slnt" 0
+        }
+
+        .container {
+            width: 720px;
+            aspect-ratio: 4 / 3
+        }
+
+        img {
+            display: block;
+            margin: 0;
+            padding: 0;
+            border-radius: 4px;
+            cursor: pointer
+        }
+
+        .main {
+            padding: 8px;
+            position: relative;
+        }
+
+        .main, .secondary img, .label {
+            filter: brightness(0.9);
+            cursor: pointer;
+        }
+
+        .main:hover, .secondary img:hover, .label:hover {
+            filter: brightness(1.1);
+            cursor: pointer;
+        }
+
+        .main img {
+            width: 100%;
+            aspect-ratio: 16 / 9
+        }
+
         .secondary {
             display: flex;
             flex-wrap: nowrap;
             column-gap: 8px;
             padding-right: 8px;
             padding-left: 8px;
-            margin-right:  8px;
+            margin-right: 8px;
             overflow-x: hidden;
         }
-        .secondary img { height: 120px }
+
+        .secondary img {
+            height: 120px
+        }
+
+        .label {
+            position: relative;
+            border-radius: 4px
+        }
+
+        .caption {
+            position: absolute;
+            border-radius: 4px;
+            top: 0;
+            bottom: 0;
+            right: 0;
+            left: 0;
+            background: rgba(0, 0, 0, 0.5);
+            color: white;
+            text-transform: uppercase;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+        }
+        
+        .actions {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            bottom: 8px;
+            left: 0;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+
+        .icon {
+            height: 100%;
+            width: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-top-right-radius: 4px;
+            border-bottom-right-radius: 4px;
+            background: rgb(0,0,0);
+            background: linear-gradient(90deg, rgba(0,0,0,0) 0%, rgba(0,0,0,0.3) 100%);
+        }
+
+        .icon svg {
+            filter: invert(100%)
+        }
     </style>
 </head>
+
 <body>
     <div class="container">
         <div class="main">
-            <img src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/joker-joaquin-phoenix-batman-1.jpg?width=1200&aspect_ratio=16:9" />
+            <img
+                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/joker-joaquin-phoenix-batman-1.jpg?width=1200&aspect_ratio=16:9" />
+            <div class="actions">
+                <div class="icon">
+                    <svg width="15" height="27" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M1.5 2L8.5 9L1.5 16" stroke="black" stroke-width="2" stroke-miterlimit="10"
+                            stroke-linecap="square" />
+                    </svg>
+                </div>
+            </div>
         </div>
         <div class="secondary">
-            <img src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/batman-arkham-asylum-dc-comics.jpg?width=1200&aspect_ratio=16:9" />
-            <img src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-penguin-colin-farrell-reveals-how-the-batman-spinoff-ope_apjb.jpg?width=1200&aspect_ratio=16:9" />
-            <img src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-flash-barry-allen-1.jpg?width=1200&aspect_ratio=16:9" />
-            <img src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/helldivers-ii.1713521304.6623.jpg?width=1200&aspect_ratio=16:9" />
+            <div class="label">
+                <img
+                    src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/batman-arkham-asylum-dc-comics.jpg?width=1200&aspect_ratio=16:9" />
+                <div class="caption">6 imágenes</div>
+            </div>
+            <img
+                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-penguin-colin-farrell-reveals-how-the-batman-spinoff-ope_apjb.jpg?width=1200&aspect_ratio=16:9" />
+            <img
+                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-flash-barry-allen-1.jpg?width=1200&aspect_ratio=16:9" />
+            <img
+                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/helldivers-ii.1713521304.6623.jpg?width=1200&aspect_ratio=16:9" />
         </div>
     </div>
 </body>
+
 </html>
