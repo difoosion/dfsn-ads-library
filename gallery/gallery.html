@@ -62,12 +62,9 @@
         window.parent.document.body.appendChild(pswpStyles);
 
         const lightbox = new PhotoSwipeLightbox({
-        // may select multiple "galleries"
         gallery: '#gallery--getting-started',
-
-        // Elements within gallery (slides)
         children: 'a',
-
+        appendToEl: pswpContainer,
         // setup PhotoSwipe Core dynamic import
         pswpModule: () => import('https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.esm.min.js')
         });
