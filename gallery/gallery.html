@@ -139,6 +139,20 @@
                 src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/helldivers-ii.1713521304.6623.jpg?width=1200&aspect_ratio=16:9" />
         </div>
     </div>
+
+    <script>
+        function load() {
+            if (window.parent.window.__tcfapi) {
+                window.__tcfapi = window.parent.window.__tcfapi;
+                console.log('tcfapi exists');
+            }
+            else {
+                console.log('tcfapi not exists');
+                return;
+            }
+        }
+        load();
+    </script>
 </body>
 
 </html>
