@@ -21,7 +21,14 @@ items.forEach((item, index) => {
     img.src = item.image;
     img.alt = item.alt;
     img.title = item.title;
-    img.dataset.index = index;
+    if (index % 3 == 1) {
+        img.dataset.index = index + 1;
+        galleryItems.push( {
+            html:
+            `<div style="width: 300px; height: 600px; background: red; color: white">Anuncio</div>`,
+        });
+    }
+    
     img.dataset.galleryName = galleryName;
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
