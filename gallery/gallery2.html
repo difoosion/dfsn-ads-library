@@ -22,7 +22,7 @@
             aspect-ratio: 720 / 532;
             overflow: hidden;
         }
-        
+
         img {
             display: block;
             margin: 0;
@@ -93,7 +93,7 @@
             top: 0;
             right: 0;
             bottom: 0;
-            left: 0;
+            width: 60px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -120,8 +120,6 @@
 <body>
     <div class="container">
         <div class="main">
-            <img
-                src="https://cdn.andro4all.com/andro4all/2024/04/nothing-ear-a-en-su-estuche.jpg?width=1200&aspect_ratio=16:9" />
             <div class="actions">
                 <div class="icon">
                     <svg width="15" height="27" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,44 +130,11 @@
             </div>
         </div>
         <div class="secondary">
-            <img
-                src="https://cdn.andro4all.com/andro4all/2024/04/nothing-ear-a.jpg?width=1200&aspect_ratio=16:9" />
-            <img
-                src="https://cdn.andro4all.com/andro4all/2024/04/carga-de-los-nothing-ear-a-blancos.jpg?width=1200&aspect_ratio=16:9" />
-            <img
-                src="https://cdn.andro4all.com/andro4all/2024/04/primer-plano-de-los-nothing-ear-a.jpg?width=1200&aspect_ratio=16:9" />
-            <img
-                src="https://www.lavanguardia.com/andro4all/hero/2024/04/nothing-ear-a-de-color-amarillo.jpg?width=1200&aspect_ratio=16:9" />
         </div>
     </div>
 
-    <script>
-
-        const callback = (tcData, success) => {
-            console.log('__tcfapi event', tcData, success);
-
-            if (success && tcData.eventStatus === 'tcloaded') {
-                
-            }
-            else {
-            }
-        };
-
-        function load() {
-            if (window.parent.window.__tcfapi) {
-                window.__tcfapi = window.parent.window.__tcfapi;
-                console.log('tcfapi exists');
-            }
-            else {
-                console.log('tcfapi not exists');
-                return;
-            }
-
-            __tcfapi('addEventListener', 2, callback);
-        }
-
-        load();
-    </script>
+    <script src="data2.js"></script>
+    <script src="gallery.js"></script>
 </body>
 
 </html>

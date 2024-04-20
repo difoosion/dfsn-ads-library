@@ -133,74 +133,8 @@
         </div>
     </div>
 
-    <script>
-        const items = [
-            {
-                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/joker-joaquin-phoenix-batman-1.jpg?width=1200&aspect_ratio=16:9",
-                "description": "",
-                "title": "Joker",
-                "alt": "Joker"
-            },
-            {
-                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/batman-arkham-asylum-dc-comics.jpg?width=1200&aspect_ratio=16:9",
-                "description": "",
-                "title": "Batman",
-                "alt": "Batman"
-            },
-            {
-                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-penguin-colin-farrell-reveals-how-the-batman-spinoff-ope_apjb.jpg?width=1200&aspect_ratio=16:9",
-                "description": "",
-                "title": "",
-                "alt": ""
-            },
-            {
-                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-flash-barry-allen-1.jpg?width=1200&aspect_ratio=16:9",
-                "description": "",
-                "title": "",
-                "alt": ""
-            },
-            {
-                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/helldivers-ii.1713521304.6623.jpg?width=1200&aspect_ratio=16:9",
-                "description": "",
-                "title": "",
-                "alt": ""
-            }
-        ];
-
-        items.forEach((item, index) => {
-            const img = document.createElement('img');
-            img.src = item.image;
-            img.alt = item.alt;
-            img.title = item.title;
-            const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
-            container.insertBefore(img, container.lastChild);
-        });
-
-        const callback = (tcData, success) => {
-            console.log('__tcfapi event', tcData, success);
-
-            if (success && tcData.eventStatus === 'tcloaded') {
-                
-            }
-            else {
-            }
-        };
-
-        function load() {
-            if (window.parent.window.__tcfapi) {
-                window.__tcfapi = window.parent.window.__tcfapi;
-                console.log('tcfapi exists');
-            }
-            else {
-                console.log('tcfapi not exists');
-                return;
-            }
-
-            __tcfapi('addEventListener', 2, callback);
-        }
-
-        load();
-    </script>
+    <script src="data1.js"></script>
+    <script src="gallery.js"></script>
 </body>
 
 </html>
