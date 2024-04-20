@@ -23,6 +23,7 @@ items.forEach((item, index) => {
     img.title = item.title;
     img.dataset.index = index;
     img.dataset.galleryName = galleryName;
+    img.dataset.caption = item.description;
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
@@ -65,7 +66,8 @@ function OnImgClick(element) {
                 src: `${element.dataset.image}?width=1200&aspect_ratio=16:9`,
                 width: 1200,
                 height: 675,
-                alt: element.dataset.title
+                alt: element.dataset.title,
+                caption: element.dataset.caption
             }
         ],
         bgOpacity: 0.5,

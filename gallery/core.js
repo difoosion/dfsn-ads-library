@@ -4,7 +4,7 @@ window.parent.window.dfsnGalleryOpen = function(element) {
     const options = {
         dataSource: galleryItems[element.dataset.galleryName]
     };
-    options.index = parseInt(element.dataset.index); // defines start slide index
+    options.index = parseInt(element.dataset.index);
     const pswp = new PhotoSwipe(options);
-    pswp.init(); // initializing PhotoSwipe core adds it to DOM
+    pswp.init();
 };
