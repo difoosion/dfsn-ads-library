@@ -28,7 +28,7 @@ items.forEach((item, index) => {
     container.insertBefore(img, container.lastChild);
     galleryItems.push( {
         html:
-        `<figure>
+        `<figure class="dfsn-gallery-item">
             <img src="${item.image}" alt="${item.alt}" title="${item.title}">
             <figcaption>${item.description}</figcaption>
         </figure>`,
@@ -89,6 +89,28 @@ function loadLibraries() {
     script.src = 'core.js';
     script.type = 'module';
     window.parent.document.head.appendChild(script);
+
+    const style = document.createElement('style');
+    style.innerHTML = `
+    .dfsn-gallery-item {
+        display: flex;
+        height: 100%;
+        width: 100%;
+        padding: 60px;
+        margin: 0;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .dfsn-gallery-item figcaption {
+        color: #fff;
+        display: inline-block;
+        font-size: 16px;
+        line-height: 24px;
+    }
+    `;
+    window.parent.document.head.appendChild(style);
 }
 
 loadLibraries();
