@@ -5,6 +5,10 @@ window.parent.window.dfsnGalleryOpen = function(element) {
         dataSource: galleryItems[element.dataset.galleryName]
     };
     options.index = parseInt(element.dataset.index);
-    const pswp = new PhotoSwipe(options);
-    pswp.init();
+    const lightbox = new PhotoSwipe(options);
+    lightbox.addFilter('itemData', (itemData, index) => {
+        console.log('itemData', itemData, index);
+        return itemData;
+    });      
+    lightbox.init();
 };
