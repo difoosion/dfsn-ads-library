@@ -27,11 +27,11 @@ items.forEach((item, index) => {
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
     galleryItems.push( {
-        src: item.image,
-        width: 1200,
-        height: 675,
-        alt: item.alt,
-        html: item.description
+        html:
+        `<figure>
+            <img src="${item.image}" alt="${item.alt}" title="${item.title}">
+            <figcaption>${item.description}</figcaption>
+        </figure>`,
     });
 });
 
