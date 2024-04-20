@@ -23,15 +23,15 @@ items.forEach((item, index) => {
     img.title = item.title;
     img.dataset.index = index;
     img.dataset.galleryName = galleryName;
-    img.dataset.caption = item.description;
-    img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
+¡    img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
     galleryItems.push( {
         src: item.image,
         width: 1200,
         height: 675,
-        alt: item.alt
+        alt: item.alt,
+        html: item.description
     });
 });
 
