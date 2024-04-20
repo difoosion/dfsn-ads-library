@@ -7,7 +7,7 @@ window.parent.window.dfsnGalleryOpen = function(element) {
         padding: { top: 20, bottom: 40, left: 100, right: 100 },
         showHideAnimationType: 'none'
     };
-    options.index = element.dataset.index; // defines start slide index
+    options.index = parseInt(element.dataset.index); // defines start slide index
     const pswp = new PhotoSwipe(options);
     pswp.init(); // initializing PhotoSwipe core adds it to DOM
 };
