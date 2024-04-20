@@ -1,4 +1,4 @@
-if (!window.parent.window.galleryItems) {
+if (typeof window.parent.window.galleryItems === 'undefined') {
     window.parent.window.galleryItems = [];
 }
 
