@@ -46,6 +46,15 @@ items.forEach((item, index) => {
         height: 675,
         alt: item.alt
     });
+    
+    if (items.length == index + 1 && index % 3 != 2) {
+        galleryItems.push( {
+            html:
+            `<div style="display: flex; justify-content: center; align-items: center; height: 100%">
+                <div style="width: 300px; height: 600px; background: red; color: white">Anuncio</div>
+            </div>`,
+        });
+    }
 });
 
 window.parent.window.galleryItems[galleryName] = galleryItems;
