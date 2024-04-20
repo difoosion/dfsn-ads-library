@@ -89,6 +89,12 @@ function loadLibraries() {
     link.rel = 'stylesheet';
     link.href = 'https://cdnjs.cloudflare.com/ajax/libs/photoswipe/5.4.2/photoswipe.min.css';
     window.parent.document.head.appendChild(link);
+    
+    const link2 = document.createElement('link');
+    link2.rel = 'stylesheet';
+    link2.href = 'https://unpkg.com/photoswipe-dynamic-caption-plugin/photoswipe-dynamic-caption-plugin.css';
+    window.parent.document.head.appendChild(link2);
+
     const script = document.createElement('script');
     script.src = 'core.js';
     script.type = 'module';
