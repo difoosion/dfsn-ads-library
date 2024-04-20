@@ -17,11 +17,12 @@
         }
 
         .container {
-            width: 720px;
-            height: 532px;
+            width: 100%;
+            height: auto;
+            aspect-ratio: 720 / 532;
             overflow: hidden;
         }
-
+        
         img {
             display: block;
             margin: 0;
@@ -58,12 +59,17 @@
         }
 
         .secondary img {
-            height: 120px
+            height: auto;
+            aspect-ratio: 16 / 9;
+            width: 26.5%;
         }
 
         .label {
             position: relative;
-            border-radius: 4px
+            border-radius: 4px;
+            height: auto;
+            aspect-ratio: 16 / 9;
+            width: 26.5%;
         }
 
         .caption {
@@ -126,11 +132,8 @@
             </div>
         </div>
         <div class="secondary">
-            <div class="label">
-                <img
-                    src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/batman-arkham-asylum-dc-comics.jpg?width=1200&aspect_ratio=16:9" />
-                <div class="caption">6 imágenes</div>
-            </div>
+            <img
+                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/batman-arkham-asylum-dc-comics.jpg?width=1200&aspect_ratio=16:9" />
             <img
                 src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-penguin-colin-farrell-reveals-how-the-batman-spinoff-ope_apjb.jpg?width=1200&aspect_ratio=16:9" />
             <img
@@ -161,7 +164,7 @@
                 console.log('tcfapi not exists');
                 return;
             }
-            
+
             __tcfapi('addEventListener', 2, callback);
         }
 
