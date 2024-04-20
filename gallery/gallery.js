@@ -5,6 +5,7 @@ items.forEach((item, index) => {
     img.src = item.image;
     img.alt = item.alt;
     img.title = item.title;
+    img.dataset.index = index;
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
