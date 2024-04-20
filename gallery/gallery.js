@@ -1,4 +1,20 @@
-window.parent.window.galleryItems = [];
+if (!window.parent.window.galleryItems) {
+    window.parent.window.galleryItems = [];
+}
+
+function generateRandomString(length) {
+    let resultado = '';
+    const caracteres = 'ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789';
+    const cantidadCaracteres = caracteres.length;
+    for (let i = 0; i < length; i++) {
+        resultado += caracteres.charAt(Math.floor(Math.random() * cantidadCaracteres));
+    }
+    return resultado;
+}
+
+const galleryName = generateRandomString(6);
+
+const galleryItems = [];
 
 items.forEach((item, index) => {
     const img = document.createElement('img');
@@ -6,6 +22,7 @@ items.forEach((item, index) => {
     img.alt = item.alt;
     img.title = item.title;
     img.dataset.index = index;
+    img.dataset.galleryName = galleryName;
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
@@ -16,6 +33,8 @@ items.forEach((item, index) => {
         alt: item.alt
     });
 });
+
+window.parent.window.galleryItems[galleryName] = galleryItems;
 
 const callback = (tcData, success) => {
     console.log('__tcfapi event', tcData, success);
