@@ -63,4 +63,5 @@ function loadLibraries() {
     window.parent.document.head.appendChild(script);
 }
 
+loadLibraries();
 load();
