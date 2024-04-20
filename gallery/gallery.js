@@ -23,7 +23,7 @@ items.forEach((item, index) => {
     img.title = item.title;
     img.dataset.index = index;
     img.dataset.galleryName = galleryName;
-¡    img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
+    img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
     galleryItems.push( {
