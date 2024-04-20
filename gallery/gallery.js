@@ -16,7 +16,7 @@ const galleryName = generateRandomString(6);
 
 const galleryItems = [];
 let index = -1;
-items.forEach((item, index) => {
+items.forEach((item) => {
     index++;
     const img = document.createElement('img');
     img.src = item.image;
