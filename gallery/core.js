@@ -4,10 +4,10 @@ window.parent.window.dfsnGalleryOpen = function(element) {
     const options = {
         dataSource: [
             {
-                src: `${element.dataset.image}?width=1200&aspect_ratio=16:9`,
+                src: element.src,
                 width: 1200,
                 height: 675,
-                alt: element.dataset.title
+                alt: element.title
             }
         ],
         bgOpacity: 0.5,
