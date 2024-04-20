@@ -21,7 +21,7 @@ items.forEach((item, index) => {
     img.src = item.image;
     img.alt = item.alt;
     img.title = item.title;
-    if (index % 3 == 1) {
+    if (index % 3 == 0) {
         img.dataset.index = index + 1;
         galleryItems.push( {
             html:
