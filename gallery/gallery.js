@@ -25,7 +25,7 @@ items.forEach((item, index) => {
         img.dataset.index = index + 1;
         galleryItems.push( {
             html:
-            `<div style="display: flex; justify-content: center; align-items: center;">
+            `<div style="display: flex; justify-content: center; align-items: center; height: 100%">
                 <div style="width: 300px; height: 600px; background: red; color: white">Anuncio</div>
             </div>`,
         });
