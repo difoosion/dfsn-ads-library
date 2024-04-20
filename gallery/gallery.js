@@ -26,7 +26,9 @@ items.forEach((item, index) => {
         galleryItems.push( {
             html:
             `<div style="display: flex; justify-content: center; align-items: center; height: 100%">
-                <div style="width: 300px; height: 600px; background: red; color: white">Anuncio</div>
+                <div style="width: 300px; height: 600px">
+                    <img src="https://i0.wp.com/www.smileycat.com/wp-content/uploads/2018/10/fast-and-furious-banner-ad.png?w=300&ssl=1">
+                </div>
             </div>`,
         });
     }
@@ -51,7 +53,9 @@ items.forEach((item, index) => {
         galleryItems.push( {
             html:
             `<div style="display: flex; justify-content: center; align-items: center; height: 100%">
-                <div style="width: 300px; height: 600px; background: red; color: white">Anuncio</div>
+                <div style="width: 300px; height: 600px">
+                    <img src="https://i0.wp.com/www.smileycat.com/wp-content/uploads/2018/10/fast-and-furious-banner-ad.png?w=300&ssl=1">
+                </div>
             </div>`,
         });
     }
