@@ -15,14 +15,15 @@ function generateRandomString(length) {
 const galleryName = generateRandomString(6);
 
 const galleryItems = [];
-
+let index = -1;
 items.forEach((item, index) => {
+    index++;
     const img = document.createElement('img');
     img.src = item.image;
     img.alt = item.alt;
     img.title = item.title;
     if (index % 3 == 2) {
-        img.dataset.index = index + 1;
+        index++
         galleryItems.push( {
             html:
             `<div style="display: flex; justify-content: center; align-items: center; height: 100%">
@@ -33,6 +34,7 @@ items.forEach((item, index) => {
         });
     }
     
+    img.dataset.index = index;
     img.dataset.galleryName = galleryName;
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
