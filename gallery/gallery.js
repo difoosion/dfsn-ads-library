@@ -26,7 +26,7 @@ items.forEach((item, index) => {
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
-    window.parent.window.galleryItems.push( {
+    galleryItems.push( {
         src: item.image,
         width: 1200,
         height: 675,
