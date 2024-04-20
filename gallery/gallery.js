@@ -108,6 +108,7 @@ function loadLibraries() {
         display: inline-block;
         font-size: 16px;
         line-height: 24px;
+        background: rgba(0,0,0,0.2)
     }
     `;
     window.parent.document.head.appendChild(style);
