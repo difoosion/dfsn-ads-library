@@ -1,4 +1,4 @@
-window.parent.window.galleryItems = items;
+window.parent.window.galleryItems = [];
 
 items.forEach((item, index) => {
     const img = document.createElement('img');
@@ -8,6 +8,12 @@ items.forEach((item, index) => {
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
     container.insertBefore(img, container.lastChild);
+    window.parent.window.galleryItems.push( {
+        src: item.image,
+        width: 1200,
+        height: 675,
+        alt: item.alt
+    });
 });
 
 const callback = (tcData, success) => {
