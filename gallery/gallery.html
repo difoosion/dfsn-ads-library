@@ -93,7 +93,7 @@
             top: 0;
             right: 0;
             bottom: 0;
-            left: 0;
+            width: 60px;
             display: flex;
             justify-content: flex-end;
             align-items: center;
@@ -120,8 +120,6 @@
 <body>
     <div class="container">
         <div class="main">
-            <img
-                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/joker-joaquin-phoenix-batman-1.jpg?width=1200&aspect_ratio=16:9" />
             <div class="actions">
                 <div class="icon">
                     <svg width="15" height="27" viewBox="0 0 10 18" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -132,18 +130,51 @@
             </div>
         </div>
         <div class="secondary">
-            <img
-                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/batman-arkham-asylum-dc-comics.jpg?width=1200&aspect_ratio=16:9" />
-            <img
-                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-penguin-colin-farrell-reveals-how-the-batman-spinoff-ope_apjb.jpg?width=1200&aspect_ratio=16:9" />
-            <img
-                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-flash-barry-allen-1.jpg?width=1200&aspect_ratio=16:9" />
-            <img
-                src="https://www.mundodeportivo.com/alfabeta/hero/2024/04/helldivers-ii.1713521304.6623.jpg?width=1200&aspect_ratio=16:9" />
         </div>
     </div>
 
     <script>
+        const items = [
+            {
+                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/joker-joaquin-phoenix-batman-1.jpg?width=1200&aspect_ratio=16:9",
+                "description": "",
+                "title": "Joker",
+                "alt": "Joker"
+            },
+            {
+                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/batman-arkham-asylum-dc-comics.jpg?width=1200&aspect_ratio=16:9",
+                "description": "",
+                "title": "Batman",
+                "alt": "Batman"
+            },
+            {
+                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-penguin-colin-farrell-reveals-how-the-batman-spinoff-ope_apjb.jpg?width=1200&aspect_ratio=16:9",
+                "description": "",
+                "title": "",
+                "alt": ""
+            },
+            {
+                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/the-flash-barry-allen-1.jpg?width=1200&aspect_ratio=16:9",
+                "description": "",
+                "title": "",
+                "alt": ""
+            },
+            {
+                "image": "https://www.mundodeportivo.com/alfabeta/hero/2024/04/helldivers-ii.1713521304.6623.jpg?width=1200&aspect_ratio=16:9",
+                "description": "",
+                "title": "",
+                "alt": ""
+            }
+        ];
+
+        items.forEach((item, index) => {
+            const img = document.createElement('img');
+            img.src = item.image;
+            img.alt = item.alt;
+            img.title = item.title;
+            const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary');
+            container.insertBefore(img, container.lastChild);
+        });
 
         const callback = (tcData, success) => {
             console.log('__tcfapi event', tcData, success);
