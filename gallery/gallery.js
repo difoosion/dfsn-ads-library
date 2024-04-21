@@ -73,6 +73,7 @@ items.forEach((item, i) => {
     }
 });
 
+secondaryContainer.style.animation = `scroll ${parseInt((items.length - 1) * 3)}s linear infinite;`;
 const secondaryContainerClone = secondaryContainer.cloneNode(true);
 secondaryDiv.appendChild(secondaryContainerClone);
 
