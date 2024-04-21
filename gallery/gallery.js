@@ -14,6 +14,10 @@ function generateRandomString(length) {
 
 const galleryName = generateRandomString(6);
 
+const secondaryDiv = document.querySelector('.secondary');
+const mainDiv = document.querySelector('.main');
+const secondaryContainer = document.querySelector('.secondary_container');
+
 const galleryItems = [];
 let index = -1;
 items.forEach((item, i) => {
@@ -36,11 +40,10 @@ items.forEach((item, i) => {
     
     img.dataset.index = index;
     img.dataset.galleryName = galleryName;
-    img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
-    const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary_container');
+    const container = index == 0 ? mainDiv : secondaryContainer;
 
     if (index != 0) {
-        container.style.minWidth = `${document.querySelector('.secondary').clientWidth}px`;
+        container.style.minWidth = `${secondaryDiv.clientWidth}px`;
     }
 
     container.insertBefore(img, container.lastChild);
@@ -66,6 +69,14 @@ items.forEach((item, i) => {
             </div>`,
         });
     }
+});
+
+const secondaryContainerClone = secondaryContainer.cloneNode(true);
+secondaryDiv.appendChild(secondaryContainerClone);
+
+const images = document.querySelectorAll('.secondary img, .main img');
+images.forEach(img => {
+    img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
 });
 
 window.parent.window.galleryItems[galleryName] = galleryItems;
