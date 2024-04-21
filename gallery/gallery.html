@@ -163,11 +163,14 @@
             const dataScript = document.createElement('script');
             dataScript.src = `data${data}.js`;
             dataScript.type = 'text/javascript';
-            document.body.appendChild(dataScript, document.body.lastChild);
-            const galleryScript = document.createElement('script');
-            galleryScript.src = 'gallery.js';
-            galleryScript.type = 'module';
-            document.body.appendChild(galleryScript, document.body.lastChild);
+            dataScript.async = true;
+            dataScript.addEventListener('load', () => {
+                const galleryScript = document.createElement('script');
+                galleryScript.src = 'gallery.js';
+                galleryScript.type = 'module';
+                document.body.appendChild(galleryScript, document.body.lastChild);
+            });
+            document.body.appendChild(dataScript, document.body.lastChild);   
         }
         loadData();
     </script>
