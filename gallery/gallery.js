@@ -26,6 +26,12 @@ items.forEach((item, i) => {
     img.src = item.image;
     img.alt = item.alt;
     img.title = item.title;
+    if (i == 0) {
+        img.style.width = `100%`;
+    }
+    else {
+        img.style.width = `${parseInt(mainDiv.clientWidth * 26.5)}px`;
+    }
     if (i % 3 == 2) {
         index++
         galleryItems.push( {
@@ -41,10 +47,6 @@ items.forEach((item, i) => {
     img.dataset.index = index;
     img.dataset.galleryName = galleryName;
     const container = index == 0 ? mainDiv : secondaryContainer;
-
-    if (index != 0) {
-        container.style.minWidth = `${secondaryDiv.clientWidth}px`;
-    }
 
     container.insertBefore(img, container.lastChild);
     galleryItems.push( {
