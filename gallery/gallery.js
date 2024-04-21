@@ -17,6 +17,7 @@ const galleryName = generateRandomString(6);
 const secondaryDiv = document.querySelector('.secondary');
 const mainDiv = document.querySelector('.main');
 const secondaryContainer = document.querySelector('.secondary_container');
+const actionsDiv = document.querySelector('.actions');
 
 const galleryItems = [];
 let index = -1;
@@ -81,6 +82,9 @@ secondaryDiv.appendChild(secondaryContainerClone);
 const images = document.querySelectorAll('.secondary img, .main img');
 images.forEach(img => {
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
+    if (img.dataset.index == 0) {
+        actionsDiv.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
+    }
 });
 
 window.parent.window.galleryItems[galleryName] = galleryItems;
