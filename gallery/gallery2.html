@@ -56,6 +56,26 @@
             column-gap: 8px;
             overflow-x: hidden;
             margin-top: 8px;
+            --gap: 8px;
+            gap: var(--gap);
+        }
+
+        .secondary_container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: var(--gap);
+            animation: scroll 15s linear infinite;
+        }
+
+        .secondary:hover .secondary_container {
+            animation-play-state: paused;
+        }
+
+        @keyframes scroll {
+            to {
+                transform: translateX(calc(-100% - var(--gap)));
+            }
         }
 
         .secondary img {
@@ -130,6 +150,9 @@
             </div>
         </div>
         <div class="secondary">
+            <div class="secondary_container">
+
+            </div>
         </div>
     </div>
 
