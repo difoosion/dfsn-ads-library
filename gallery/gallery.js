@@ -30,7 +30,7 @@ items.forEach((item, i) => {
         img.style.width = `100%`;
     }
     else {
-        img.style.width = `${parseInt(mainDiv.clientWidth * 26.5)}px`;
+        img.style.width = `${parseInt(mainDiv.clientWidth * 0.265)}px`;
     }
     if (i % 3 == 2) {
         index++
