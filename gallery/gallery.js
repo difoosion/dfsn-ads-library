@@ -38,6 +38,11 @@ items.forEach((item, i) => {
     img.dataset.galleryName = galleryName;
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     const container = index == 0 ? document.querySelector('.main') : document.querySelector('.secondary_container');
+
+    if (index != 0) {
+        container.style.minWidth = `${document.querySelector('.secondary').clientWidth}px`;
+    }
+
     container.insertBefore(img, container.lastChild);
     galleryItems.push( {
         /* html:
