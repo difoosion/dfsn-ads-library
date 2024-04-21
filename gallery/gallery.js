@@ -16,13 +16,13 @@ const galleryName = generateRandomString(6);
 
 const galleryItems = [];
 let index = -1;
-items.forEach((item) => {
+items.forEach((item, i) => {
     index++;
     const img = document.createElement('img');
     img.src = item.image;
     img.alt = item.alt;
     img.title = item.title;
-    if (index % 3 == 2) {
+    if (i % 3 == 2) {
         index++
         galleryItems.push( {
             html:
@@ -51,7 +51,7 @@ items.forEach((item) => {
         alt: item.alt
     });
     
-    if (items.length == index + 1 && index % 3 != 2) {
+    if (items.length == i + 1 && i % 3 != 0) {
         galleryItems.push( {
             html:
             `<div style="display: flex; justify-content: center; align-items: center; height: 100%">
