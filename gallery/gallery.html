@@ -156,8 +156,19 @@
         </div>
     </div>
 
+    <script>
+        function loadData() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const data = urlParams.get('data');
+            const s = document.createElement('script');
+            s.src = `data${data}.js`;
+            s.type = 'text/javascript';
+            document.head.appendChild(s);
+        }
+    </script>
+
     <script src="data1.js"></script>
     <script type="module" src="gallery.js"></script>
 </body>
 
-</html>
+</html>const urlParams = new URLSearchParams(window.location.search);
