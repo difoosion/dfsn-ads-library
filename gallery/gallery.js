@@ -82,7 +82,7 @@ secondaryDiv.appendChild(secondaryContainerClone);
 const images = document.querySelectorAll('.secondary img, .main img');
 images.forEach(img => {
     img.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
-    if (img.dataset.index == 0) {
+    if (img.dataset.index == 1) {
         actionsDiv.addEventListener('click', () => window.parent.window.dfsnGalleryOpen(img));
     }
 });
